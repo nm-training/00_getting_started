@@ -1,7 +1,15 @@
-
 ## Your first R code
 
+### R as Calculator
+
 1 + 5 
+10 - 5 
+10 * 5
+10 / 2 
+
+# Basic Functions
+
+1:10
 
 sum(1:100)
 
@@ -18,23 +26,39 @@ Mode <- function(x) {
   ux[which.max(tabulate(match(x, ux)))]
 }
 
-Mode(c(1, 1, 1, 1, 1, 2, 2, 2, 4, 4, 4, 4))
+Mode(c(5, 3, 5, 3, 1, 3, 4, 5, 4, 1, 1, 1, 2, 1, 2, 1, 2, 2, 4, 5, 4, 4, 4))
 
 
 ## Your first R plot
 
-plot()
+# without labels
+plot(cars)
 
-plot(, main = "", 
-     xlab = "", 
-     ylab = "")
+# with labels
+plot(cars, main = "Speed vs Dist", 
+     xlab = "Speed (mph)", 
+     ylab = "Stopping Distance (ft)")
 
 
 ## first ggplot2 plot
 
+# install.packages("ggplot2")
+
 library(ggplot2)
 
-ggplot(, aes(x = , y = )) +
+
+## without labels
+ggplot(cars, aes(x = speed, y = dist)) +
+  geom_point()
+
+
+# with labels
+ggplot(cars, aes(x = speed, y = dist)) +
   geom_point() +
-  labs(x = "", y = "", title = "") +
+  labs(x = "Speed (mph)", y = "Stopping Distance (ft)",
+       title = "Speed vs Dist") +
   theme_classic() 
+
+
+
+tinytex::install_tinytex()

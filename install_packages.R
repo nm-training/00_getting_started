@@ -1,7 +1,3 @@
-install.packages("devtools") #install
-
-library(devtools) #load
-
-devtools::install_github("nm-training/rsetup")
-
-## Ctrl + Enter
+install.packages("devtools"); 
+devtools::install_github("nm-training/rsetup");
+rsetup::install_pdf()
